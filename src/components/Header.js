@@ -78,7 +78,7 @@ export function Header({ locales = [], navigation, settings }) {
           />
         </div>
         <div
-          className={`${mobileNav ? "max-h-full" : "max-h-0"} ${isActive ? "top-[85px] lg:top-[95px]" : "top-[70px] lg:top-[80px]"} fixed left-0 w-full h-full transition-all duration-500 bg-white -z-10`}
+          className={`${mobileNav ? "max-h-full" : "max-h-0"} ${isActive ? "top-[0px] lg:top-[0px]" : "top-[70px] lg:top-[80px]"} fixed left-0 w-full h-full transition-all duration-500 bg-white -z-10`}
         >
           <nav className="flex flex-col w-full h-full overflow-hidden justify-evenly">
             <ul className="flex flex-col items-center justify-center py-6 mb-8 gap-y-6">
@@ -86,6 +86,7 @@ export function Header({ locales = [], navigation, settings }) {
                 <li
                   key={prismic.asText(item.label)}
                   className="text-2xl uppercase font-primary"
+                  onClick={() => setMobileNav(false)}
                 >
                   <PrismicNextLink field={item.link}>
                     <PrismicText field={item.label} />
