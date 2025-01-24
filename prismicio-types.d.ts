@@ -61,23 +61,12 @@ export type NavigationDocument<Lang extends string = string> =
     Lang
   >;
 
-type PageDocumentDataSlicesSlice = never;
+type PageDocumentDataSlicesSlice = HeroSliceSlice;
 
 /**
  * Content for Page documents
  */
 interface PageDocumentData {
-  /**
-   * Title field in *Page*
-   *
-   * - **Field Type**: Title
-   * - **Placeholder**: Title for the page
-   * - **API ID Path**: page.title
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  title: prismic.TitleField;
-
   /**
    * Slice Zone field in *Page*
    *
@@ -181,6 +170,97 @@ export type AllDocumentTypes =
   | PageDocument
   | SettingsDocument;
 
+/**
+ * Primary content in *HeroSlice → Default → Primary*
+ */
+export interface HeroSliceSliceDefaultPrimary {
+  /**
+   * Heading field in *HeroSlice → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_slice.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Image field in *HeroSlice → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_slice.default.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Content field in *HeroSlice → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_slice.default.primary.content
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  content: prismic.KeyTextField;
+
+  /**
+   * Button Label field in *HeroSlice → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_slice.default.primary.button_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_label: prismic.KeyTextField;
+
+  /**
+   * Button Link field in *HeroSlice → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_slice.default.primary.button_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_link: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+}
+
+/**
+ * Default variation for HeroSlice Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroSliceSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<HeroSliceSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *HeroSlice*
+ */
+type HeroSliceSliceVariation = HeroSliceSliceDefault;
+
+/**
+ * HeroSlice Shared Slice
+ *
+ * - **API ID**: `hero_slice`
+ * - **Description**: HeroSlice
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroSliceSlice = prismic.SharedSlice<
+  "hero_slice",
+  HeroSliceSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -211,6 +291,10 @@ declare module "@prismicio/client" {
       SettingsDocument,
       SettingsDocumentData,
       AllDocumentTypes,
+      HeroSliceSlice,
+      HeroSliceSliceDefaultPrimary,
+      HeroSliceSliceVariation,
+      HeroSliceSliceDefault,
     };
   }
 }
