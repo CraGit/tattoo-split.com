@@ -3,7 +3,6 @@ import * as prismic from "@prismicio/client";
 import { PrismicText } from "@prismicio/react";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import React, { useEffect, useState } from "react";
-import { TiThMenu } from "react-icons/ti";
 import { GiHamburgerMenu } from "react-icons/gi";
 
 const localeLabels = {

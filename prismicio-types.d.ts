@@ -61,7 +61,10 @@ export type NavigationDocument<Lang extends string = string> =
     Lang
   >;
 
-type PageDocumentDataSlicesSlice = HeroSliceSlice;
+type PageDocumentDataSlicesSlice =
+  | GallerySliceSlice
+  | AboutUsSliceSlice
+  | HeroSliceSlice;
 
 /**
  * Content for Page documents
@@ -169,6 +172,195 @@ export type AllDocumentTypes =
   | NavigationDocument
   | PageDocument
   | SettingsDocument;
+
+/**
+ * Primary content in *AboutUsSlice → Default → Primary*
+ */
+export interface AboutUsSliceSliceDefaultPrimary {
+  /**
+   * Heading field in *AboutUsSlice → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_us_slice.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Content field in *AboutUsSlice → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_us_slice.default.primary.content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+
+  /**
+   * Image field in *AboutUsSlice → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_us_slice.default.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Button Text field in *AboutUsSlice → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_us_slice.default.primary.button_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_text: prismic.KeyTextField;
+
+  /**
+   * Button Link field in *AboutUsSlice → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_us_slice.default.primary.button_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_link: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+}
+
+/**
+ * Default variation for AboutUsSlice Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AboutUsSliceSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<AboutUsSliceSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *AboutUsSlice*
+ */
+type AboutUsSliceSliceVariation = AboutUsSliceSliceDefault;
+
+/**
+ * AboutUsSlice Shared Slice
+ *
+ * - **API ID**: `about_us_slice`
+ * - **Description**: AboutUsSlice
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AboutUsSliceSlice = prismic.SharedSlice<
+  "about_us_slice",
+  AboutUsSliceSliceVariation
+>;
+
+/**
+ * Item in *GallerySlice → Default → Primary → Gallery*
+ */
+export interface GallerySliceSliceDefaultPrimaryGalleryItem {
+  /**
+   * Image field in *GallerySlice → Default → Primary → Gallery*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: gallery_slice.default.primary.gallery[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *GallerySlice → Default → Primary*
+ */
+export interface GallerySliceSliceDefaultPrimary {
+  /**
+   * Heading field in *GallerySlice → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: gallery_slice.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Gallery field in *GallerySlice → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: gallery_slice.default.primary.gallery[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  gallery: prismic.GroupField<
+    Simplify<GallerySliceSliceDefaultPrimaryGalleryItem>
+  >;
+
+  /**
+   * Button Text field in *GallerySlice → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: gallery_slice.default.primary.button_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_text: prismic.KeyTextField;
+
+  /**
+   * Button Link field in *GallerySlice → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: gallery_slice.default.primary.button_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_link: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+}
+
+/**
+ * Default variation for GallerySlice Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type GallerySliceSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<GallerySliceSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *GallerySlice*
+ */
+type GallerySliceSliceVariation = GallerySliceSliceDefault;
+
+/**
+ * GallerySlice Shared Slice
+ *
+ * - **API ID**: `gallery_slice`
+ * - **Description**: GallerySlice
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type GallerySliceSlice = prismic.SharedSlice<
+  "gallery_slice",
+  GallerySliceSliceVariation
+>;
 
 /**
  * Primary content in *HeroSlice → Default → Primary*
@@ -291,6 +483,15 @@ declare module "@prismicio/client" {
       SettingsDocument,
       SettingsDocumentData,
       AllDocumentTypes,
+      AboutUsSliceSlice,
+      AboutUsSliceSliceDefaultPrimary,
+      AboutUsSliceSliceVariation,
+      AboutUsSliceSliceDefault,
+      GallerySliceSlice,
+      GallerySliceSliceDefaultPrimaryGalleryItem,
+      GallerySliceSliceDefaultPrimary,
+      GallerySliceSliceVariation,
+      GallerySliceSliceDefault,
       HeroSliceSlice,
       HeroSliceSliceDefaultPrimary,
       HeroSliceSliceVariation,

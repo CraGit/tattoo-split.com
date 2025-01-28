@@ -19,10 +19,14 @@
     "@prismicio/react": "^2.9.1",
     "clsx": "^2.0.0",
     "framer-motion": "^12.0.1",
+    "install": "^0.13.0",
     "next": "^14.0.2",
+    "npm": "^11.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-icons": "^5.4.0"
+    "react-icons": "^5.4.0",
+    "react-modal": "^3.16.3",
+    "react-photo-album": "^2.0.4"
   },
   "devDependencies": {
     "@slicemachine/adapter-next": "^0.3.65",
