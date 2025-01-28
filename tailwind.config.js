@@ -26,7 +26,8 @@ module.exports = {
     },
     extend: {
       colors: {
-        ink: "#12852D",
+        // ink: "#12852D",
+        ink: "#19B83D",
         dark: "#111111",
         grey: {
           DEFAULT: "#555555",

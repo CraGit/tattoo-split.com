@@ -62,6 +62,9 @@ export type NavigationDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | SmallHeroSliceSlice
+  | ContactSliceSlice
+  | QuoteSliceSlice
   | TestimonialsSliceSlice
   | GallerySliceSlice
   | AboutUsSliceSlice
@@ -266,6 +269,36 @@ export type AboutUsSliceSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Default variation for ContactSlice Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContactSliceSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *ContactSlice*
+ */
+type ContactSliceSliceVariation = ContactSliceSliceDefault;
+
+/**
+ * ContactSlice Shared Slice
+ *
+ * - **API ID**: `contact_slice`
+ * - **Description**: ContactSlice
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContactSliceSlice = prismic.SharedSlice<
+  "contact_slice",
+  ContactSliceSliceVariation
+>;
+
+/**
  * Item in *GallerySlice → Default → Primary → Gallery*
  */
 export interface GallerySliceSliceDefaultPrimaryGalleryItem {
@@ -455,6 +488,116 @@ export type HeroSliceSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *QuoteSlice → Default → Primary*
+ */
+export interface QuoteSliceSliceDefaultPrimary {
+  /**
+   * Heading field in *QuoteSlice → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: quote_slice.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Image field in *QuoteSlice → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: quote_slice.default.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for QuoteSlice Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type QuoteSliceSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<QuoteSliceSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *QuoteSlice*
+ */
+type QuoteSliceSliceVariation = QuoteSliceSliceDefault;
+
+/**
+ * QuoteSlice Shared Slice
+ *
+ * - **API ID**: `quote_slice`
+ * - **Description**: QuoteSlice
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type QuoteSliceSlice = prismic.SharedSlice<
+  "quote_slice",
+  QuoteSliceSliceVariation
+>;
+
+/**
+ * Primary content in *SmallHeroSlice → Default → Primary*
+ */
+export interface SmallHeroSliceSliceDefaultPrimary {
+  /**
+   * Heading field in *SmallHeroSlice → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: small_hero_slice.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Image field in *SmallHeroSlice → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: small_hero_slice.default.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for SmallHeroSlice Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SmallHeroSliceSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<SmallHeroSliceSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *SmallHeroSlice*
+ */
+type SmallHeroSliceSliceVariation = SmallHeroSliceSliceDefault;
+
+/**
+ * SmallHeroSlice Shared Slice
+ *
+ * - **API ID**: `small_hero_slice`
+ * - **Description**: SmallHeroSlice
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SmallHeroSliceSlice = prismic.SharedSlice<
+  "small_hero_slice",
+  SmallHeroSliceSliceVariation
+>;
+
+/**
  * Item in *TestimonialsSlice → Default → Primary → Testimonials*
  */
 export interface TestimonialsSliceSliceDefaultPrimaryTestimonialsItem {
@@ -570,6 +713,9 @@ declare module "@prismicio/client" {
       AboutUsSliceSliceDefaultPrimary,
       AboutUsSliceSliceVariation,
       AboutUsSliceSliceDefault,
+      ContactSliceSlice,
+      ContactSliceSliceVariation,
+      ContactSliceSliceDefault,
       GallerySliceSlice,
       GallerySliceSliceDefaultPrimaryGalleryItem,
       GallerySliceSliceDefaultPrimary,
@@ -579,6 +725,14 @@ declare module "@prismicio/client" {
       HeroSliceSliceDefaultPrimary,
       HeroSliceSliceVariation,
       HeroSliceSliceDefault,
+      QuoteSliceSlice,
+      QuoteSliceSliceDefaultPrimary,
+      QuoteSliceSliceVariation,
+      QuoteSliceSliceDefault,
+      SmallHeroSliceSlice,
+      SmallHeroSliceSliceDefaultPrimary,
+      SmallHeroSliceSliceVariation,
+      SmallHeroSliceSliceDefault,
       TestimonialsSliceSlice,
       TestimonialsSliceSliceDefaultPrimaryTestimonialsItem,
       TestimonialsSliceSliceDefaultPrimary,
