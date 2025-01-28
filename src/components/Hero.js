@@ -17,7 +17,6 @@ const container = {
 };
 
 const Hero = ({ heading, content, image, button_label, button_link }) => {
-  console.log(image);
   return (
     <section className="min-h-[40vh] lg:min-h-[90vh] relative">
       <div className="absolute inset-0 z-0">

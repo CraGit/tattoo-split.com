@@ -10,7 +10,6 @@ import { PrismicNextLink } from "@prismicio/next";
 import { PrismicRichText } from "@prismicio/react";
 
 const AboutUs = ({ title, content, button_text, button_link, image }) => {
-  console.log(image);
   // destructure about data
 
   return (

@@ -1,0 +1,43 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"testimonials": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"name",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "influence",
+									"type": "Text"
+								}
+							],
+							[
+								"country",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "chamber",
+									"type": "Text"
+								}
+							],
+							[
+								"testimonial",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "bell",
+									"type": "Text"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]
