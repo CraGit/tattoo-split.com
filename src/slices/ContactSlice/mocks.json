@@ -2,7 +2,72 @@
 	{
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
-		"primary": {},
+		"primary": {
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"value": "spin",
+				"type": "Text"
+			},
+			"address": {
+				"__TYPE__": "FieldContent",
+				"value": "car",
+				"type": "Text"
+			},
+			"company": {
+				"__TYPE__": "FieldContent",
+				"value": "official",
+				"type": "Text"
+			},
+			"phone": {
+				"__TYPE__": "FieldContent",
+				"value": "main",
+				"type": "Text"
+			},
+			"email": {
+				"__TYPE__": "FieldContent",
+				"value": "composed",
+				"type": "Text"
+			},
+			"link_text": {
+				"__TYPE__": "FieldContent",
+				"value": "shown",
+				"type": "Text"
+			},
+			"link": {
+				"key": "40375af3-53ea-4cb9-9809-be8bd8a08d2f",
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://google.com",
+					"text": "felt"
+				}
+			},
+			"name_placeholder": {
+				"__TYPE__": "FieldContent",
+				"value": "thought",
+				"type": "Text"
+			},
+			"phone_placeholder": {
+				"__TYPE__": "FieldContent",
+				"value": "new",
+				"type": "Text"
+			},
+			"email_placeholder": {
+				"__TYPE__": "FieldContent",
+				"value": "particles",
+				"type": "Text"
+			},
+			"button_text": {
+				"__TYPE__": "FieldContent",
+				"value": "negative",
+				"type": "Text"
+			},
+			"message_placeholder": {
+				"__TYPE__": "FieldContent",
+				"value": "honor",
+				"type": "Text"
+			}
+		},
 		"items": []
 	}
 ]

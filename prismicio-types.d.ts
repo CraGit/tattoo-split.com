@@ -269,6 +269,131 @@ export type AboutUsSliceSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *ContactSlice → Default → Primary*
+ */
+export interface ContactSliceSliceDefaultPrimary {
+  /**
+   * Heading field in *ContactSlice → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_slice.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Company field in *ContactSlice → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_slice.default.primary.company
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  company: prismic.KeyTextField;
+
+  /**
+   * Address field in *ContactSlice → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_slice.default.primary.address
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  address: prismic.KeyTextField;
+
+  /**
+   * Phone field in *ContactSlice → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_slice.default.primary.phone
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  phone: prismic.KeyTextField;
+
+  /**
+   * Email field in *ContactSlice → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_slice.default.primary.email
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  email: prismic.KeyTextField;
+
+  /**
+   * Link Text field in *ContactSlice → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_slice.default.primary.link_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  link_text: prismic.KeyTextField;
+
+  /**
+   * Link field in *ContactSlice → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_slice.default.primary.link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+
+  /**
+   * Name Placeholder field in *ContactSlice → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_slice.default.primary.name_placeholder
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  name_placeholder: prismic.KeyTextField;
+
+  /**
+   * Phone placeholder field in *ContactSlice → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_slice.default.primary.phone_placeholder
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  phone_placeholder: prismic.KeyTextField;
+
+  /**
+   * Email Placeholder field in *ContactSlice → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_slice.default.primary.email_placeholder
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  email_placeholder: prismic.KeyTextField;
+
+  /**
+   * Message Placeholder field in *ContactSlice → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_slice.default.primary.message_placeholder
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  message_placeholder: prismic.KeyTextField;
+
+  /**
+   * Button Text field in *ContactSlice → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_slice.default.primary.button_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_text: prismic.KeyTextField;
+}
+
+/**
  * Default variation for ContactSlice Slice
  *
  * - **API ID**: `default`
@@ -277,7 +402,7 @@ export type AboutUsSliceSlice = prismic.SharedSlice<
  */
 export type ContactSliceSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Record<string, never>,
+  Simplify<ContactSliceSliceDefaultPrimary>,
   never
 >;
 
@@ -714,6 +839,7 @@ declare module "@prismicio/client" {
       AboutUsSliceSliceVariation,
       AboutUsSliceSliceDefault,
       ContactSliceSlice,
+      ContactSliceSliceDefaultPrimary,
       ContactSliceSliceVariation,
       ContactSliceSliceDefault,
       GallerySliceSlice,
