@@ -1,5 +1,5 @@
 import { Header } from "./Header";
-import { Footer } from "./Footer";
+import Footer from "./Footer";
 
 export function Layout({ locales, navigation, settings, children }) {
   return (
