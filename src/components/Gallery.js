@@ -111,8 +111,16 @@ const Gallery = ({ heading, button_text, button_link, gallery }) => {
           isOpen={modalIsOpen}
           onRequestClose={closeModal}
           className="fixed inset-0 flex items-center justify-center p-4 outline-none"
-          overlayClassName="fixed inset-0 bg-black/80"
+          overlayClassName="fixed inset-0 bg-black/80 z-[9999]"
           contentLabel="Image Modal"
+          style={{
+            overlay: {
+              zIndex: 9999,
+            },
+            content: {
+              zIndex: 10000,
+            },
+          }}
         >
           <div className="relative w-full max-w-6xl mx-auto">
             {/* Close button */}
