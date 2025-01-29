@@ -93,6 +93,21 @@ export function Header({ locales = [], navigation, settings }) {
                 </li>
               ))}
             </ul>
+            <div className="flex flex-wrap gap-3 items-center justify-center">
+              <ul className="flex flex-wrap gap-3">
+                {locales.map((locale) => (
+                  <li key={locale.lang} className="first:font-semibold flex">
+                    <PrismicNextLink
+                      href={locale.url}
+                      locale={locale.lang}
+                      aria-label={`Change language to ${locale.lang_name}`}
+                    >
+                      {localeLabels[locale.lang] || locale.lang}
+                    </PrismicNextLink>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </nav>
         </div>
       </div>

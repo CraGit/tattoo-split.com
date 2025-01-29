@@ -13,7 +13,7 @@ const AboutUs = ({ title, content, button_text, button_link, image }) => {
   // destructure about data
 
   return (
-    <section className="lg:py-16 xl:pb-[160px] overflow-hidden">
+    <section className="py-8 lg:py-16 xl:pb-[160px] overflow-hidden">
       <div className="container mx-auto">
         <div className="flex flex-col lg:flex-row gap-x-[70px] items-center">
           {/* number */}
