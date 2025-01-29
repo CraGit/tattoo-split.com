@@ -16,7 +16,7 @@ const container = {
   },
 };
 
-const SmallHero = ({ heading, content, image, button_label, button_link }) => {
+const SmallHero = ({ heading, image }) => {
   return (
     <section className="min-h-[20vh] lg:min-h-[60vh] relative">
       <div className="absolute inset-0 z-0">
