@@ -1,0 +1,39 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"value": "donkey",
+				"type": "Text"
+			},
+			"content": {
+				"__TYPE__": "FieldContent",
+				"value": "art",
+				"type": "Text"
+			},
+			"box1_heading": {
+				"__TYPE__": "FieldContent",
+				"value": "farm",
+				"type": "Text"
+			},
+			"box1_content": {
+				"__TYPE__": "FieldContent",
+				"value": "girl",
+				"type": "Text"
+			},
+			"box2_heading": {
+				"__TYPE__": "FieldContent",
+				"value": "dress",
+				"type": "Text"
+			},
+			"box2_content": {
+				"__TYPE__": "FieldContent",
+				"value": "grain",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]

@@ -18,6 +18,15 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "article_list_slice": {
+              "type": "SharedSlice"
+            },
+            "team_section_slice": {
+              "type": "SharedSlice"
+            },
+            "about_two_section_slice": {
+              "type": "SharedSlice"
+            },
             "small_hero_slice": {
               "type": "SharedSlice"
             },

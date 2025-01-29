@@ -22,6 +22,8 @@ export const routes = [
     uid: "home",
     path: "/:lang",
   },
+  { type: "page", uid: "clanci", path: "/:lang/clanci" },
+  { type: "article", path: "/:lang/clanci/:uid" },
   {
     type: "page",
     path: "/:lang/:uid",

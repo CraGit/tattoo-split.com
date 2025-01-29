@@ -78,7 +78,7 @@ const Gallery = ({ heading, button_text, button_link, gallery }) => {
   }, [modalIsOpen]);
 
   return (
-    <section className="relative bg-[#f9f9f9] section mt-[40px]">
+    <section className="relative bg-[#f9f9f9] section">
       {/* title */}
       <motion.div
         className="container mx-auto"
