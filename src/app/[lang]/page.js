@@ -30,7 +30,7 @@ export default async function Page({ params: { lang } }) {
 
   return (
     <Layout locales={locales} navigation={navigation} settings={settings}>
-      <SliceZone slices={page.data.slices} components={components} />
+      <SliceZone slices={page.data.slices} components={components} context={{ lang }} />
     </Layout>
   );
 }
