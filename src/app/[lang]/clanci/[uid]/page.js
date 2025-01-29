@@ -34,6 +34,11 @@ export default async function Page({ params: { uid, lang } }) {
     <Layout locales={locales} navigation={navigation} settings={settings}>
       <SmallHero heading={page.data.heading} image={page.data.image} />
       <Article content={page.data.content} />
+      <SliceZone
+        slices={page.data.body}
+        components={components}
+        context={lang}
+      />
     </Layout>
   );
 }
