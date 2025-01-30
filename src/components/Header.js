@@ -11,6 +11,7 @@ const localeLabels = {
 };
 
 export function Header({ locales = [], navigation, settings }) {
+  const currentLocale = locales.length > 0 ? locales[0].lang : "en-us";
   const [isActive, setIsActive] = useState(false);
   // mobile nav state
   const [mobileNav, setMobileNav] = useState(false);
@@ -25,7 +26,7 @@ export function Header({ locales = [], navigation, settings }) {
       className={`${isActive ? " h-[85] lg:h-[95px] shadow-lg" : "h-[70px] lg:h-[80px]"} bg-white fixed left-0 right-0 z-20 max-w-[1920px] w-full mx-auto transition-all duration-300`}
     >
       <div className="flex items-center justify-between h-full pl-[5%] xl:pl-[50px] xl:pr-[60px] ">
-        <PrismicNextLink href="/">
+        <PrismicNextLink href={currentLocale === "en-us" ? "/" : `/${currentLocale}`}>
           <span className="sr-only">Go to homepage</span>
           {prismic.isFilled.image(settings.data.logo) && (
             <>

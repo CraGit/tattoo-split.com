@@ -6,6 +6,18 @@ import clsx from "clsx";
 
 import { repositoryName } from "@/prismicio";
 
+export const metadata = {
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+    other: {
+      rel: "apple-touch-icon-precomposed",
+      url: "/apple-touch-icon-precomposed.png",
+    },
+  },
+};
+
 const oswald = Oswald({
   subsets: ["latin"],
   variable: "--font-primary",
