@@ -280,6 +280,31 @@ export type AllDocumentTypes =
   | SettingsDocument;
 
 /**
+ * Item in *AboutTwoSectionSlice → Default → Primary → Services*
+ */
+export interface AboutTwoSectionSliceSliceDefaultPrimaryServicesItem {
+  /**
+   * Heading field in *AboutTwoSectionSlice → Default → Primary → Services*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_two_section_slice.default.primary.services[].heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Content field in *AboutTwoSectionSlice → Default → Primary → Services*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_two_section_slice.default.primary.services[].content
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  content: prismic.KeyTextField;
+}
+
+/**
  * Primary content in *AboutTwoSectionSlice → Default → Primary*
  */
 export interface AboutTwoSectionSliceSliceDefaultPrimary {
@@ -342,6 +367,18 @@ export interface AboutTwoSectionSliceSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   box2_content: prismic.KeyTextField;
+
+  /**
+   * Services field in *AboutTwoSectionSlice → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_two_section_slice.default.primary.services[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  services: prismic.GroupField<
+    Simplify<AboutTwoSectionSliceSliceDefaultPrimaryServicesItem>
+  >;
 }
 
 /**
@@ -1157,6 +1194,7 @@ declare module "@prismicio/client" {
       SettingsDocumentData,
       AllDocumentTypes,
       AboutTwoSectionSliceSlice,
+      AboutTwoSectionSliceSliceDefaultPrimaryServicesItem,
       AboutTwoSectionSliceSliceDefaultPrimary,
       AboutTwoSectionSliceSliceVariation,
       AboutTwoSectionSliceSliceDefault,

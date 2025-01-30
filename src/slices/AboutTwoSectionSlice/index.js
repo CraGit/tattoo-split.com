@@ -14,10 +14,7 @@ const AboutTwoSectionSlice = ({ slice }) => {
       <AboutTwo
         heading={slice.primary.heading}
         content={slice.primary.content}
-        box1_heading={slice.primary.box1_heading}
-        box1_content={slice.primary.box1_content}
-        box2_heading={slice.primary.box2_heading}
-        box2_content={slice.primary.box2_content}
+        services={slice.primary.services}
       />
     </section>
   );
