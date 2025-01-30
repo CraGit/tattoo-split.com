@@ -42,7 +42,7 @@ Phone: ${body.phone}
 Message: ${body.message}`;
 
     const data = {
-      to: "crashaw@gmail.com",
+      to: "tattoo.greenink@gmail.com",
       from: "greeninksplit@gmail.com",
       replyTo: body.email,
       subject: "Tattoo-Split.com - Upit s web stranice",
