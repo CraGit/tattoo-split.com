@@ -329,46 +329,6 @@ export interface AboutTwoSectionSliceSliceDefaultPrimary {
   content: prismic.KeyTextField;
 
   /**
-   * Box1 Heading field in *AboutTwoSectionSlice → Default → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: about_two_section_slice.default.primary.box1_heading
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  box1_heading: prismic.KeyTextField;
-
-  /**
-   * Box1 Content field in *AboutTwoSectionSlice → Default → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: about_two_section_slice.default.primary.box1_content
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  box1_content: prismic.KeyTextField;
-
-  /**
-   * Box2 Heading field in *AboutTwoSectionSlice → Default → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: about_two_section_slice.default.primary.box2_heading
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  box2_heading: prismic.KeyTextField;
-
-  /**
-   * Box2 Content field in *AboutTwoSectionSlice → Default → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: about_two_section_slice.default.primary.box2_content
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  box2_content: prismic.KeyTextField;
-
-  /**
    * Services field in *AboutTwoSectionSlice → Default → Primary*
    *
    * - **Field Type**: Group

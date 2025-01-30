@@ -26,34 +26,6 @@
             "placeholder": ""
           }
         },
-        "box1_heading": {
-          "type": "Text",
-          "config": {
-            "label": "Box1 Heading",
-            "placeholder": ""
-          }
-        },
-        "box1_content": {
-          "type": "Text",
-          "config": {
-            "label": "Box1 Content",
-            "placeholder": ""
-          }
-        },
-        "box2_heading": {
-          "type": "Text",
-          "config": {
-            "label": "Box2 Heading",
-            "placeholder": ""
-          }
-        },
-        "box2_content": {
-          "type": "Text",
-          "config": {
-            "label": "Box2 Content",
-            "placeholder": ""
-          }
-        },
         "services": {
           "type": "Group",
           "config": {
