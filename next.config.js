@@ -4,6 +4,9 @@ const nextConfig = async () => {
     reactStrictMode: true,
     images: {
       domains: ["images.prismic.io"],
+      dangerouslyAllowSVG: true,
+      contentDispositionType: 'attachment',
+      contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     },
     redirects: async () => {
       return [

@@ -22,7 +22,7 @@ const QuoteSvg = () => (
   </svg>
 );
 const Testimonials = ({ testimonials }) => {
-  console.log(testimonials);
+
   return (
     <motion.section
       className="py-[40px] lg:pb-[160px] lg:pt-0"

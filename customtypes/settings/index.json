@@ -22,6 +22,14 @@
           "thumbnails": [],
           "label": "Logo"
         }
+      },
+      "whatsapp": {
+        "type": "Image",
+        "config": {
+          "label": "Whatsapp",
+          "constraint": {},
+          "thumbnails": []
+        }
       }
     }
   }
