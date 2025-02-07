@@ -1,0 +1,42 @@
+{
+  "id": "before_after",
+  "type": "SharedSlice",
+  "name": "BeforeAfter",
+  "description": "BeforeAfter",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "Text",
+          "config": {
+            "label": "Heading",
+            "placeholder": ""
+          }
+        },
+        "before": {
+          "type": "Image",
+          "config": {
+            "label": "Before",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "after": {
+          "type": "Image",
+          "config": {
+            "label": "After",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

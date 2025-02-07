@@ -6,6 +6,7 @@ export const components = {
   about_two_section_slice: dynamic(() => import("./AboutTwoSectionSlice")),
   about_us_slice: dynamic(() => import("./AboutUsSlice")),
   article_list_slice: dynamic(() => import("./ArticleListSlice")),
+  before_after: dynamic(() => import("./BeforeAfter")),
   contact_slice: dynamic(() => import("./ContactSlice")),
   gallery_slice: dynamic(() => import("./GallerySlice")),
   hero_slice: dynamic(() => import("./HeroSlice")),

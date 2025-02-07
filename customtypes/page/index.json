@@ -18,6 +18,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "before_after": {
+              "type": "SharedSlice"
+            },
             "article_list_slice": {
               "type": "SharedSlice"
             },

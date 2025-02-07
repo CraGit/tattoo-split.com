@@ -160,6 +160,7 @@ export type NavigationDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | BeforeAfterSlice
   | ArticleListSliceSlice
   | TeamSectionSliceSlice
   | AboutTwoSectionSliceSlice
@@ -501,6 +502,71 @@ type ArticleListSliceSliceVariation = ArticleListSliceSliceDefault;
 export type ArticleListSliceSlice = prismic.SharedSlice<
   "article_list_slice",
   ArticleListSliceSliceVariation
+>;
+
+/**
+ * Primary content in *BeforeAfter → Default → Primary*
+ */
+export interface BeforeAfterSliceDefaultPrimary {
+  /**
+   * Heading field in *BeforeAfter → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: before_after.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Before field in *BeforeAfter → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: before_after.default.primary.before
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  before: prismic.ImageField<never>;
+
+  /**
+   * After field in *BeforeAfter → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: before_after.default.primary.after
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  after: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for BeforeAfter Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BeforeAfterSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<BeforeAfterSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *BeforeAfter*
+ */
+type BeforeAfterSliceVariation = BeforeAfterSliceDefault;
+
+/**
+ * BeforeAfter Shared Slice
+ *
+ * - **API ID**: `before_after`
+ * - **Description**: BeforeAfter
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BeforeAfterSlice = prismic.SharedSlice<
+  "before_after",
+  BeforeAfterSliceVariation
 >;
 
 /**
@@ -1176,6 +1242,10 @@ declare module "@prismicio/client" {
       ArticleListSliceSlice,
       ArticleListSliceSliceVariation,
       ArticleListSliceSliceDefault,
+      BeforeAfterSlice,
+      BeforeAfterSliceDefaultPrimary,
+      BeforeAfterSliceVariation,
+      BeforeAfterSliceDefault,
       ContactSliceSlice,
       ContactSliceSliceDefaultPrimary,
       ContactSliceSliceVariation,
