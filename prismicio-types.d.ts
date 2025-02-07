@@ -505,11 +505,36 @@ export type ArticleListSliceSlice = prismic.SharedSlice<
 >;
 
 /**
- * Primary content in *BeforeAfter → Default → Primary*
+ * Item in *BeforeAfterSlice → Default → Primary → BeforeAfter*
+ */
+export interface BeforeAfterSliceDefaultPrimaryBeforeafterItem {
+  /**
+   * Before field in *BeforeAfterSlice → Default → Primary → BeforeAfter*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: before_after.default.primary.beforeafter[].before
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  before: prismic.ImageField<never>;
+
+  /**
+   * After field in *BeforeAfterSlice → Default → Primary → BeforeAfter*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: before_after.default.primary.beforeafter[].after
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  after: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *BeforeAfterSlice → Default → Primary*
  */
 export interface BeforeAfterSliceDefaultPrimary {
   /**
-   * Heading field in *BeforeAfter → Default → Primary*
+   * Heading field in *BeforeAfterSlice → Default → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -519,28 +544,20 @@ export interface BeforeAfterSliceDefaultPrimary {
   heading: prismic.KeyTextField;
 
   /**
-   * Before field in *BeforeAfter → Default → Primary*
+   * BeforeAfter field in *BeforeAfterSlice → Default → Primary*
    *
-   * - **Field Type**: Image
+   * - **Field Type**: Group
    * - **Placeholder**: *None*
-   * - **API ID Path**: before_after.default.primary.before
-   * - **Documentation**: https://prismic.io/docs/field#image
+   * - **API ID Path**: before_after.default.primary.beforeafter[]
+   * - **Documentation**: https://prismic.io/docs/field#group
    */
-  before: prismic.ImageField<never>;
-
-  /**
-   * After field in *BeforeAfter → Default → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: before_after.default.primary.after
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  after: prismic.ImageField<never>;
+  beforeafter: prismic.GroupField<
+    Simplify<BeforeAfterSliceDefaultPrimaryBeforeafterItem>
+  >;
 }
 
 /**
- * Default variation for BeforeAfter Slice
+ * Default variation for BeforeAfterSlice Slice
  *
  * - **API ID**: `default`
  * - **Description**: Default
@@ -553,12 +570,12 @@ export type BeforeAfterSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
- * Slice variation for *BeforeAfter*
+ * Slice variation for *BeforeAfterSlice*
  */
 type BeforeAfterSliceVariation = BeforeAfterSliceDefault;
 
 /**
- * BeforeAfter Shared Slice
+ * BeforeAfterSlice Shared Slice
  *
  * - **API ID**: `before_after`
  * - **Description**: BeforeAfter
@@ -1243,6 +1260,7 @@ declare module "@prismicio/client" {
       ArticleListSliceSliceVariation,
       ArticleListSliceSliceDefault,
       BeforeAfterSlice,
+      BeforeAfterSliceDefaultPrimaryBeforeafterItem,
       BeforeAfterSliceDefaultPrimary,
       BeforeAfterSliceVariation,
       BeforeAfterSliceDefault,
