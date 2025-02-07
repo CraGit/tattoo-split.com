@@ -21,6 +21,11 @@ const nextConfig = async () => {
           permanent: true,
         },
         {
+          source: "/",
+          destination: "/hr",
+          permanent: true,
+        },
+        {
           source: "/about",
           destination: "/hr/o-nama",
           permanent: true,
